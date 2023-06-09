@@ -6,7 +6,19 @@ header {
   justify-content: space-around;
   box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.8);
 }
+.logout-btn {
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+  padding: 14px;
+  font-size: 1rem;
+  color: darkred;
+
+}
 .login-btn {
+  position: relative;
+  top: 20vh;
+  left: 50vw;
   background-color: inherit;
   border: none;
   cursor: pointer;
@@ -14,7 +26,81 @@ header {
   font-size: 1rem;
   color: darkred;
 }
-.login-btn:hover {
+.logout-btn:hover {
   background-color: black;
   color: white;
+}
+.contacts-list {
+  list-style: none;
+}
+.contact-btn {
+  border: 1px solid #b3b2b2;
+  outline: none;
+  font-size: 1.5rem;
+  border-radius: 20px;
+  min-height: 10vh;
+  width: 100%;
+}
+.contact-btn:hover {
+  background-color: #7a7979;
+}
+
+.compose {
+  height: 95vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 80vh 1fr;
+  background: #3e3e3e;
+}
+.message-list-div {
+  grid-row: 1;
+  position: relative;
+}
+.message-list {
+  list-style: none;
+  position: relative;
+  height: 100%;
+  overflow-y: scroll;
+  background: white;
+  width: 95%;
+}
+.sent, .received {
+  position: relative;
+  border: 1px dotted #838282;
+  margin: 20px 0;
+  width: 40%;
+  border-radius: 35px;
+  text-align: center;
+}
+.sent {
+  right: -50%;
+  background-color: #9ad191;
+  
+}
+.received {
+  background-color: #9198d1;
+  
+}
+.message-time {
+  font-size: 0.7rem;
+  color: #5b5a5a;
+}
+.compose-form-div {
+  position: relative;
+  grid-row: 2;
+  width: 100%;
+  
+}
+.compose-input {
+  width: 90%;
+  height: 6vh;
+  margin: 30px 10px;
+  border-radius: 10px;
+  font-size: 1.3rem;
+}
+.send-btn {
+  background-color: greenyellow;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1.6rem;
 }

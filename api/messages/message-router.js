@@ -2,10 +2,9 @@ const express = require('express');
 const Messages = require('./message-model');
 const router = express.Router();
 
-router.post("/:id", async (req, res, next) => {
+router.post("/", async (req, res, next) => {
     try {
-        const rec_id = req.params.id;
-        const { sender_id } = req.body;
+        const { sender_id, rec_id } = req.body;
         const messages = await Messages.getMessages(sender_id, rec_id)
             res.status(200).json(messages)
     } catch (err) {

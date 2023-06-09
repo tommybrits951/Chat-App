@@ -43,15 +43,22 @@ async function getMessages(id, rec) {
     })   
     return arr 
 }
+const months = ["months", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 async function insertMessage(mess) {
     const { sender, recipient } = mess
     const sender_id = await db("users").where("username", sender).select("id").first()
     const rec_id = await db("users").where("username", recipient).select("id").first()
+    const month = new Date().getMonth()
+    const year = new Date().getFullYear()
+    const day = new Date().getDate()
+    const result = `${months[month]}  ${day}, ${year}`
     let message = {
-        message: mess.message,
-        sender: sender_id,
-        recipient: rec_id
+        message: mess.message.newMessage,
+        sender: sender_id.id,
+        recipient: rec_id.id,
+        time: result
     }
+    console.log(message)
     const [id] = await db("messages").insert(message);
     const response = await db("messages").where("message_id", id).first()
     return response;

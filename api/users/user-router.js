@@ -37,7 +37,8 @@ router.post("/register", async (req, res, next) => {
 
 router.post("/login", async (req, res, next) => {
     try {
-        const { email } = req.body;
+        const {email} = req.body;
+        console.log(email)
         const user = await Users.getByEmail(email)
         res.status(200).json(user)
     } catch (err) {
