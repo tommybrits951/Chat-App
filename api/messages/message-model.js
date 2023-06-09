@@ -1,5 +1,5 @@
 const db = require('../data/db-config');
-const { getById, getByName } = require("../users/user-model")
+const { getById} = require("../users/user-model")
 async function getSent(id, rec) {
     let sender = await getById(id)
     sender = sender.username;
