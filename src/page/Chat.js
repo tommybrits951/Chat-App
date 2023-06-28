@@ -40,6 +40,7 @@ function Chat(props) {
         axios.post("http://localhost:5000/message/send", mess)
         .then(res => {
             console.log(res)
+            setFormData(initForm)
         })
         .catch(err => {
             console.log(err)
@@ -54,7 +55,7 @@ function Chat(props) {
         getMessages()
         console.log(sender)
         console.log(recipient)
-    }, [])
+    }, [submit])
     return(
         <div className="compose">
             <div className="message-list-div">
